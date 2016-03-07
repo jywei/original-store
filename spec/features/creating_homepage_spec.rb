@@ -6,6 +6,6 @@ require "rails_helper"
       visit '/'
 
       expect(page).to have_link('Craving')
-      expect(page).to have_content('For kebabs?')
+      expect(page).to have_content('Searching into authentic experiences?')
     end
 end
