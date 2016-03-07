@@ -1,6 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 body {
   padding-top: 70px;
 }
+
+.product-price{
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
