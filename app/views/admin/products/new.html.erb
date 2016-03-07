@@ -60,7 +60,7 @@
           <%= f.label("Product's Image") %>
         </div>
         <div class="controls col-md-10">
-          <%= f.file_field :photo do |c| %>
+          <%= f.simple_fields_for :photo do |c| %>
             <%= c.input :image , accept: 'image/jpeg,image/gif,image/png,image/jpg' %>
           <% end %>
         </div>
