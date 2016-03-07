@@ -1,0 +1,66 @@
+<h2>Create A New Product</h2>
+
+<br>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for([:admin, @product], :html => {class: "form-horizontal", role: "form"}) do |f| %>
+
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label("Product's Name") %>
+        </div>
+        <div class="controls col-md-10">
+          <%= f.text_field :title, class: "form-control", placeholder: "How to call it..." %>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label("Product's Description") %>
+        </div>
+        <div class="controls col-md-10">
+          <%= f.text_area :body, rows: 5, class: "form-control", placeholder: "Descript this products..." %>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label("Product's Quantity") %>
+        </div>
+        <div class="controls col-md-10">
+          <%= f.text_field :quantity, class: "form-control", placeholder: "How many..." %>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label("Product's Price") %>
+        </div>
+        <div class="controls col-md-10">
+          <%= f.text_field :price, class: "form-control", placeholder: "How much..." %>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+          <%= f.submit class: 'btn btn-primary btn-default', data: { disable_with: "Submitting..." } %>
+        </div>
+      </div>
+
+    <% end %>
+
+    <div class="form-group align-right">
+      <%= link_to "< Home", root_path, class: 'btn btn-danger btn-default' %>
+    </div>
+
+  </div>
+</div>
