@@ -1,0 +1,11 @@
+require "rails_helper"
+
+  RSpec.feature "Creating Homepage" do
+
+    scenario do
+      visit '/'
+
+      expect(page).to have_link('Craving')
+      expect(page).to have_content('For kebabs?')
+    end
+end
