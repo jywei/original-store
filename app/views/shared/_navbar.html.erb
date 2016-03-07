@@ -14,7 +14,7 @@
       <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active">
-            <%= link_to "Market", root_path %>
+            <%= link_to "Market", products_path %>
             <span class="sr-only">(current)</span>
           </li>
         </ul>
@@ -23,8 +23,9 @@
           <% if current_user %>
 
             <li class="active">
-              <%= link_to "New Product", new_admin_product_path %>
-              <span class="sr-only">(current)</span>
+              <button type="button" class="btn btn-default navbar-btn">
+                <%= link_to "New Product", new_admin_product_path %>
+              </button>
             </li>
 
             <div class="navbar-right">
