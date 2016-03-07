@@ -50,6 +50,23 @@
 
       <br>
 
+      <% if @photo.image.present? %>
+        <span>Product's Image</span> <br>
+        <%= image_tag(@photo.image.thumb.url) %>
+      <% end %>
+
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label("Product's Image") %>
+        </div>
+        <div class="controls col-md-10">
+          <%= f.file_field :photo do |c| %>
+            <%= c.input :image , accept: 'image/jpeg,image/gif,image/png,image/jpg' %>
+          <% end %>
+        </div>
+      </div>
+
+
       <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
           <%= f.submit class: 'btn btn-primary btn-default', data: { disable_with: "Submitting..." } %>
