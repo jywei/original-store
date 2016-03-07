@@ -40,6 +40,10 @@ gem 'devise'
 
 gem "simple_form"
 
+gem "carrierwave"
+
+gem "mini_magick"
+
 group :development, :test do
   gem 'rspec-rails', '3.2.3'
 
