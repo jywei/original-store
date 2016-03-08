@@ -7,7 +7,7 @@
 
       <thead>
         <tr>
-          <th colspan="2">Product Information</th>
+          <th colspan="2">Information Of Items In The Cart</th>
           <th>Price</th>
         </tr>
       </thead>
@@ -51,7 +51,9 @@
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to("Checkout", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("Checkout", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>
 </div>
+
+<br>

@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2>Purchasement Details</h2>
+
+    <table class="table table-boardered">
+
+      <thead>
+        <tr>
+          <th width="80%">Product Information</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+
+      <br>
+
+      <tbody>
+        <% current_cart.items.each do |product| %>
+          <tr>
+            <td>
+              <%= link_to(product.title, product_path(product)) %>
+            </td>
+            <td>
+              $ <%= product.price %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <h3 class="pull-right">
+        Total $ <%= render_cart_total_price(current_cart) %>
+      </h3>
+    </div>
+
+    <hr>
+
+    <h2>Order Information</h2>
+
+    <div class="order-form">
+      <%= simple_form_for @order do |f| %>
+        <%= f.simple_fields_for :info do |c| %>
+          <legend> Order Maker</legend>
+          <div class="form-group col-lg-6">
+            <%= c.input :billing_name %>
+          </div>
+          <div class="form-group col-lg-6">
+            <%= c.input :billing_address %>
+          </div>
+
+          <legend> Package Receiver</legend>
+          <div class="form-group col-lg-6">
+            <%= c.input :shipping_name %>
+          </div>
+          <div class="form-group col-lg-6">
+            <%= c.input :shipping_address %>
+          </div>
+        <% end %>
+
+        <div class="checkout">
+          <%= f.submit "Create Order", class: "btn btn-lg btn-danger pull-right",
+                                        data: { disable_with: "Submitting..." } %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
