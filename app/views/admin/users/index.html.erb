@@ -1,12 +1,14 @@
 <h2>List of Users</h2>
 
+<br>
+
 <table class="table table-bordered">
   <thead>
     <tr>
       <th>#</th>
       <th>Email</th>
       <th>Competence</th>
-      <th>Functionality</th>
+      <th>Function</th>
     </tr>
   </thead>
   <tbody>
@@ -14,8 +16,22 @@
       <tr>
         <td><%= user.id %></td>
         <td><%= user.email %></td>
-        <td>Competence(*)</td>
-        <td>Upgrade its Competence(*)</td>
+        <td>
+          <% if user.admin? %>
+            Administrator
+          <% else %>
+            Normal User
+          <% end %>
+        </td>
+        <td>
+          <% if user.admin? %>
+            <%= link_to("Turn into a normal user", to_normal_admin_user_path(user),
+                          method: :post, class: "btn btn-info") %>
+          <% else %>
+            <%= link_to("Turn into an administrator", to_admin_admin_user_path(user),
+                          method: :post, class: "btn btn-primary") %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
