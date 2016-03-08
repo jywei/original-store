@@ -8,47 +8,39 @@
 
       <div class="form-group">
         <div class="control-label col-md-2">
-          <%= f.label("Product's Name") %>
+          <%= f.label("Name") %>
         </div>
         <div class="controls col-md-10">
           <%= f.text_field :title, class: "form-control", placeholder: "How to call it..." %>
         </div>
       </div>
 
-      <br>
-
       <div class="form-group">
         <div class="control-label col-md-2">
-          <%= f.label("Product's Description") %>
+          <%= f.label("Description") %>
         </div>
         <div class="controls col-md-10">
           <%= f.text_area :body, rows: 5, class: "form-control", placeholder: "Descript this products..." %>
         </div>
       </div>
 
-      <br>
-
       <div class="form-group">
         <div class="control-label col-md-2">
-          <%= f.label("Product's Quantity") %>
+          <%= f.label("Quantity") %>
         </div>
         <div class="controls col-md-10">
           <%= f.text_field :quantity, class: "form-control", placeholder: "How many..." %>
         </div>
       </div>
 
-      <br>
-
       <div class="form-group">
         <div class="control-label col-md-2">
-          <%= f.label("Product's Price") %>
+          <%= f.label("Price") %>
         </div>
         <div class="controls col-md-10">
           <%= f.text_field :price, class: "form-control", placeholder: "How much..." %>
         </div>
       </div>
-
-      <br>
 
       <% if @photo.image.present? %>
         <span>Product's Image</span> <br>
@@ -57,7 +49,7 @@
 
       <div class="form-group">
         <div class="control-label col-md-2">
-          <%= f.label("Product's Image") %>
+          <%= f.label("Upload") %>
         </div>
         <div class="controls col-md-10">
           <%= f.simple_fields_for :photo do |c| %>
@@ -70,14 +62,11 @@
       <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
           <%= f.submit class: 'btn btn-primary btn-default', data: { disable_with: "Submitting..." } %>
+          <%= link_to "< Home", root_path, class: 'btn btn-danger btn-default' %>
         </div>
       </div>
 
     <% end %>
-
-    <div class="form-group align-right">
-      <%= link_to "< Home", root_path, class: 'btn btn-danger btn-default' %>
-    </div>
 
   </div>
 </div>
