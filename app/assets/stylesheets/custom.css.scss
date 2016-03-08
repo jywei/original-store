@@ -1,6 +1,5 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "font-awesome";
 
 body {
   padding-top: 70px;
@@ -13,5 +12,20 @@ body {
   font-size: 30px;
   font-weight: bold;
   color: #ff0000;
+}
+
+.jumbotron {
+  text-align: left;
+  background-image: asset-url('bon_iver.jpg');
+  background-size: cover;
+  height: 650px;
+  color: #ffffff;
+  font-family: 'Helvetica Neue' !important;
+  font-stretch: expanded;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
 }
 
