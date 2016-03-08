@@ -3,7 +3,7 @@
 
     <h2>Purchasement Details</h2>
 
-    <table class="table table-boardered">
+    <table class="table table-bordered">
 
       <thead>
         <tr>
@@ -41,6 +41,8 @@
 
     <h2>Order Information</h2>
 
+    <br>
+
     <div class="order-form">
       <%= simple_form_for @order do |f| %>
         <%= f.simple_fields_for :info do |c| %>
@@ -70,3 +72,5 @@
     </div>
   </div>
 </div>
+
+<br>
