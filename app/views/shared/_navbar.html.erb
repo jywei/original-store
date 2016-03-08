@@ -14,7 +14,7 @@
       <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active">
-            <%= link_to "Market Place", products_path %>
+            <%= link_to "Bazaar", products_path %>
             <span class="sr-only">(current)</span>
           </li>
         </ul>
@@ -22,23 +22,24 @@
         <ul class="nav navbar-nav navbar-right">
 
           <li>
-            <%= link_to "#" do %>
+            <%= link_to carts_path do %>
               Shopping Cart <i class="fa fa-shopping-cart"> </i> ( <%= render_cart_items_count(current_cart) %> )
             <% end %>
           </li>
 
           <% if current_user %>
-
-            <li class="active">
-              <button type="button" class="btn btn-default navbar-btn">
-                <%= link_to "New Product", new_admin_product_path %>
-              </button>
-            </li>
+            <% if current_user.admin? %>
+              <li class="active">
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "New Product", new_admin_product_path %>
+                </button>
+              </li>
+            <% end %>
 
             <div class="navbar-right">
               <div class="navbar-text navbar-whom">
                 <li class="dropdown">
-                  <li class="dropdown-toggle" data-toggle="dropdown">
+                  <li class="dropdown-toggle login-info" data-toggle="dropdown">
                     <%= current_user.email %>
                     <b class="caret"></b>
                   </li>
