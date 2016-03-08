@@ -1,0 +1,22 @@
+<h2>List of Users</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Email</th>
+      <th>Competence</th>
+      <th>Functionality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td>Competence(*)</td>
+        <td>Upgrade its Competence(*)</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
