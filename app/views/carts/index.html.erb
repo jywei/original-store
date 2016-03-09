@@ -13,6 +13,7 @@
         <tr>
           <th colspan="2">Information Of Items In The Cart</th>
           <th>Price</th>
+          <th>Quantity</th>
           <th>Options</th>
         </tr>
       </thead>
@@ -39,8 +40,16 @@
               $ <%= product.price %>
             </td>
             <td>
+              <% item = current_cart.cart_items.find_by(product_id: product) %>
+
+              <%= form_for item, url: item_path(product) do |f| %>
+                <%= f.select :quantity, [1,2,3,4,5] %>
+                <%= f.submit "Select", data: { disable_with: "Submiting..." } %>
+              <% end -%>
+            </td>
+            <td>
               <%= link_to item_path(product), method: :delete do %>
-                <i class="fa fa-trash"></i>
+                <i class="glyphicon glyphicon-trash"></i>
               <% end %>
             </td>
           </tr>
