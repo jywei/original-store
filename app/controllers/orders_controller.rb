@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
     @order.set_payment_with!("credit_card")
     @order.make_payment!
 
-    redirect_to products_path, notice: "Your payment is succeed"
+    redirect_to account_orders_path, notice: "Your payment is succeed"
   end
 
   private

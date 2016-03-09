@@ -50,6 +50,9 @@
                     </li>
                     <% end %>
                     <li>
+                      <%= link_to("Order List", account_orders_path ) %>
+                    </li>
+                    <li>
                       <%= link_to("Sign Out", destroy_user_session_path, method: :delete ) %>
                     </li>
                   </ul>
