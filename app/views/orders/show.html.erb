@@ -65,8 +65,8 @@
 
     <% if !@order.is_paid? %>
       <div class="pull-right">
-        <%= link_to("Pay by credit card", pay_with_credit_card_order_path(@order.token), class: "btn btn-lg btn-danger") %>
-        <%= link_to("Pay via ATM", "#", class: "btn btn-lg btn-danger") %>
+        <%= link_to("Pay by credit card", pay_with_credit_card_order_path(@order.token), class: "btn btn-lg btn-success") %>
+        <%= link_to("Pay via ATM", "#", class: "btn btn-lg btn-success") %>
       </div>
     <% else %>
       <h3 class="text-center">Thank you! This order's payment is succeed!</h3>
@@ -74,3 +74,5 @@
 
   </div>
 </div>
+
+<br>

@@ -6,4 +6,10 @@ class CartsController < ApplicationController
     @info = @order.build_info
   end
 
+  def clean
+    current_cart.clean!
+    flash[:warning] = "Your cart is empty now"
+    redirect_to carts_path
+  end
+
 end
