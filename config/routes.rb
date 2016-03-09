@@ -22,7 +22,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :orders
+  resources :orders do
+    member do
+       get :pay_with_credit_card
+    end
+  end
 
   root 'pages#index'
 

@@ -8,7 +8,9 @@ class OrdersController < ApplicationController
       @order.build_item_cache_from_cart(current_cart)
       @order.calculate_total!(current_cart)
       redirect_to order_path(@order.token)
+      flash[:success] = "The order is successfully created"
     else
+      flash[:danger] = "The order is not created, please try again"
       render 'carts/checkout'
     end
   end
@@ -17,6 +19,14 @@ class OrdersController < ApplicationController
     @order = Order.find_by_token(params[:id])
     @order_info = @order.info
     @order_items = @order.items
+  end
+
+  def pay_with_credit_card
+    @order = Order.find_by_token(params[:id])
+    @order.set_payment_with!("credit_card")
+    @order.pay!
+
+    redirect_to products_path, notice: "Your payment is succeed"
   end
 
   private
