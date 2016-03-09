@@ -50,6 +50,12 @@ gem "font-awesome-rails"
 
 gem "aasm"
 
+gem "roadie", "2.4.3"
+
+gem 'stripe'
+
+gem "letter_opener", group: :development
+
 group :development, :test do
   gem 'rspec-rails', '3.2.3'
 
