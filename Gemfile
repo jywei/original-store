@@ -48,6 +48,8 @@ gem "mini_magick"
 
 gem "font-awesome-rails"
 
+gem "aasm"
+
 group :development, :test do
   gem 'rspec-rails', '3.2.3'
 
