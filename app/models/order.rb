@@ -8,7 +8,8 @@ class Order < ActiveRecord::Base
 
   before_create :generate_token
 
-
+  has_one :charge
+  accepts_nested_attributes_for :charge
 
 
 
