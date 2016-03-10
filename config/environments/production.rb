@@ -78,4 +78,16 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: 'artstore-roy.herokuapp.com' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    port:           587,
+    address:        "smtp.mailgun.org",
+    user_name:      ENV["mailgun_user"],
+    password:       ENV["mailgun_secret"],
+    domain:         "sandbox2bc7c8e60b6544b18c2b5bc1e2d4b53e.mailgun.org", # 你的 mailgun domain name
+
+    authentication: :plain,
+  }
+end
 end
