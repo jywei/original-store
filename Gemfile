@@ -58,6 +58,8 @@ gem 'stripe'
 
 gem 'fog'
 
+gem 'delayed_job_active_record'
+
 gem "letter_opener", group: :development
 
 group :development, :test do
