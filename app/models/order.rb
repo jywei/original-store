@@ -8,7 +8,7 @@ class Order < ActiveRecord::Base
 
   before_create :generate_token
 
-  include AASM
+
 
 
 
@@ -38,6 +38,8 @@ class Order < ActiveRecord::Base
   def pay!
     self.update_columns(is_paid: true )
   end
+
+  include AASM
 
   aasm do
     state :order_placed, initial: true

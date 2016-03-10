@@ -38,6 +38,8 @@ Rails.application.routes.draw do
     member do
        get :pay_with_credit_card
     end
+
+    resources :charges
   end
 
   root 'pages#index'
