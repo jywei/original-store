@@ -3,12 +3,16 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject(:user) { User.create(email: email,
                                password: password,
-                               password_confirmation: password_confirmation) }
+                               password_confirmation: password_confirmation,
+                               is_admin: is_admin) }
 
   let(:email) { "user@test.com" }
   let(:password) { "12345678" }
   let(:password_confirmation) { "12345678" }
   let(:is_admin) { false }
+
+  it { is_expected.to have_many(:orders) }
+  it { is_expected.to validate_presence_of(:email) }
 
   it "is the first test" do
     is_expected.to be_present
@@ -48,7 +52,7 @@ RSpec.describe User, type: :model do
 
       let(:is_admin) { true }
       # it { binding.pry }
-      it { expect(user.admin?).to eq false }   #something wrong here
+      it { expect(user.admin?).to eq true }   #something wrong here
       it { expect(user.admin?).to eq user.is_admin }
     end
   end
