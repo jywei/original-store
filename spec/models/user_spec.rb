@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
                                password_confirmation: password_confirmation,
                                is_admin: is_admin) }
 
-  let(:email) { "user@test.com" }
+  let(:email) { Faker::Internet.email }
   let(:password) { "12345678" }
   let(:password_confirmation) { "12345678" }
   let(:is_admin) { false }
