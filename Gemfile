@@ -44,19 +44,19 @@ gem 'ruby-graphviz'
 
 gem 'devise'
 
-gem "simple_form"
+gem 'simple_form'
 
-gem "carrierwave"
+gem 'carrierwave'
 
-gem "mini_magick"
+gem 'mini_magick'
 
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
-gem "aasm"
+gem 'aasm'
 
-gem "settingslogic"
+gem 'settingslogic'
 
-gem "roadie", "2.4.3"
+gem 'roadie', '2.4.3'
 
 gem 'stripe'
 
@@ -64,20 +64,22 @@ gem 'fog'
 
 gem 'delayed_job_active_record'
 
-gem "letter_opener", group: :development
+gem 'letter_opener', group: :development
 
 group :development, :test do
   gem 'rspec-rails', '3.2.3'
 
   gem 'guard-rspec', require: false
 
-  gem "terminal-notifier-guard"
+  gem 'terminal-notifier-guard'
 
   gem 'spring-commands-rspec'
 
-  gem "fuubar"
+  gem 'fuubar'
 
-  gem "faker"
+  gem 'faker'
+
+  gem 'factory_girl_rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
