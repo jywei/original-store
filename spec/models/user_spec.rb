@@ -23,10 +23,23 @@ RSpec.describe User, type: :model do
   #                      password_confirmation: "12345678")
   #   expect(user).to be_invalid
   # end
-  context "測試 user 建立失敗" do
+
+  context "test user creation failure" do
     let(:email) { "" }
 
     it { is_expected.to be_invalid }
-    it { expect(user.errors).to include(:email) } # 驗證是否為 email 的錯誤
+    it { expect(user.errors).to include(:email) } # test if the error from User
   end
+
+  context "password should be equal to password confirmation" do
+    let(:password_confirmation) { "not12345678" }
+
+    # it { binding.pry }
+    it { is_expected.to be_invalid }
+    it { expect(user.errors).to include(:password_confirmation) }
+  end
+
+  describe "#admin?"
+  describe "#to_admin"
+  describe "#to_normal"
 end
