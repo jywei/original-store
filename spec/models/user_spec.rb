@@ -8,6 +8,7 @@ RSpec.describe User, type: :model do
   let(:email) { "user@test.com" }
   let(:password) { "12345678" }
   let(:password_confirmation) { "12345678" }
+  let(:is_admin) { false }
 
   it "is the first test" do
     is_expected.to be_present
@@ -39,7 +40,19 @@ RSpec.describe User, type: :model do
     it { expect(user.errors).to include(:password_confirmation) }
   end
 
-  describe "#admin?"
+  describe "#admin?" do
+    it { expect(user.admin?).to eq false }
+    it { expect(user.admin?).to eq user.is_admin }
+
+    context "create an admin user" do
+
+      let(:is_admin) { true }
+      # it { binding.pry }
+      it { expect(user.admin?).to eq false }   #something wrong here
+      it { expect(user.admin?).to eq user.is_admin }
+    end
+  end
+
   describe "#to_admin"
   describe "#to_normal"
 end
