@@ -23,20 +23,9 @@ RSpec.describe Admin::ProductsController, type: :controller do
     end
   end
 
-  describe "GET new" do
-
-  end
-
-  describe "POST create" do
-
-  end
-
-  describe "GET edit" do
-
-  end
-
-  describe "PATCH update" do
-
-  end
+  describe "GET new"
+  describe "POST create"
+  describe "GET edit"
+  describe "PATCH update"
 
 end
