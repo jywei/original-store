@@ -58,30 +58,25 @@ RSpec.describe Admin::ProductsController, type: :controller do
   end
 
   describe "POST create" do
-    context "login admin_user" do
+    context "valid params" do
       before { post :create, product: { title: "macbook",
                                         price: "60000",
                                         quantity: "5",
                                         body: "Apple" }}
-
       it { expect(Product.count).to eq 1 }
       it { is_expected.to redirect_to admin_products_path }
 
-      it "create product fail" do
-        post :create, product: { price: "60000",
-                                 quantity: "5",
-                                 body: "Apple" }
-        is_expected.to render_template :new
+      context "login normal_user" do
+        let(:user) { create(:user) }
+        it { expect(response).to redirect_to root_path }
       end
     end
 
-    context "login normal_user" do
-      let(:user) { create(:user) }
-      before { post :create, product: { title: "macbook",
-                                        price: "60000",
-                                        quantity: "5",
-                                        body: "Apple" }}
-      it { expect(response).to redirect_to root_path }
+    it "create product fail by invalid params" do
+      post :create, product: { price: "60000",
+                               body: "5",
+                               description: "Apple" }
+      is_expected.to render_template :new
     end
   end
 
