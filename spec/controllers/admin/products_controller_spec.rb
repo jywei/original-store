@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Admin::ProductsController, type: :controller do
-  subject(:user) { create(:admin_user) }
-  subject(:admin_user) { create(:admin_user) }
-  subject(:normal_user){ create(:user) }
-  subject(:product)    { create(:product) }
+  subject(:user)            { create(:admin_user) }
+  subject(:admin_user)      { create(:admin_user) }
+  subject(:normal_user)     { create(:user) }
+  subject(:product)         { create(:product) }
 
   shared_examples_for "valid: access" do
     it { expect(response).to be_success }
@@ -48,14 +48,11 @@ RSpec.describe Admin::ProductsController, type: :controller do
   end
 
   describe "GET edit" do
-    context "login admin_user" do
-      before { get :edit, id: product.id }
-      it_behaves_like "valid: access"
-    end
+    before { get :edit, id: product.id }
+    it_behaves_like "valid: access"
 
     context "login normal_user" do
       let(:user) { create(:user) }
-      before { get :edit, id: product.id }
       it { expect(response).to redirect_to root_path }
     end
   end
